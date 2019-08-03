@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        alert("aaa");
+        let score = [16, 58, 99, 28, 61, 33];
+        // map  映射
+        let result = score.map(function(item) {
+            return item;
+        })
+        console.log(result);
+
+        let resultArr = score.map(item => {
+            return item * 3;
+        })
+        console.log(resultArr);
+
+        let ArrSimpleResult = score.map(item => item * 4);
+        console.log(ArrSimpleResult);
+
+        let arrGoodOrBad = score.map(function(item) {
+            return item >= 60 ? "及格" : "不及格"
+        })
+        console.log(arrGoodOrBad);
+
+        let arrGoodOrBadArr = score.map(item => item >= 60 ? "及格" : "不及格");
+        console.log(arrGoodOrBadArr);
+    </script>
+</body>
+
+</html>

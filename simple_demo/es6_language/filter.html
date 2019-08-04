@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let arr=[12,232,34,34,2314,454,5213,,123,45,231124,123];
+        let result=arr.filter(item=>{
+            if(item%3==0){
+                return true;
+            }else{
+                return false;
+            }
+        });
+        console.log(result);
+
+        let resultSimple=arr.filter(item=>item%3!==0);
+        console.log(resultSimple);
+
+        let store=[
+            {title:'男士衬衫',price:75},
+            {title:'男士袜子',price:3},
+            {title:'男士包',price:750},
+            {title:'女士包',price:7500},
+            {title:'女士衬衫',price:7512},
+        ];
+        let resultStore=store.filter(item=>item.price>=7000);
+        console.log(resultStore);
+    </script>
+</body>
+</html>

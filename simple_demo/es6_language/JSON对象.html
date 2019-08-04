@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //1.json的串行化  把json变成字符串          
+        
+
+        let json={a: 12, b: 13};
+
+        let str='http://baidu.com/path/user?data=' + json;
+        console.log(str);
+        //http://baidu.com/path/user?data=[object Object]
+
+
+        //JSON.stringify json字符串化
+        let strA='http://baidu.com/path/user?data=' + JSON.stringify(json);
+        console.log(strA);
+        //http://baidu.com/path/user?data={"a":12,"b":13}
+
+        //encodeURIComponent()函数可把字符串作为 URI 组件进行编码。
+        let strB='http://baidu.com/path/user?data='+encodeURIComponent(JSON.stringify(json));
+        console.log(strB);
+        //http://baidu.com/path/user?data=%7B%22a%22%3A12%2C%22b%22%3A13%7D
+
+
+        //2.json的解析   把字符串变回json
+        let Str='{"a": 12, "b": 32, "c": "abc"}';
+        let Json=JSON.parse(Str);
+
+        console.log(Json);
+        //{a: 12, b: 32, c: "abc"}
+
+
+
+
+
+
+    </script>
+</body>
+</html>

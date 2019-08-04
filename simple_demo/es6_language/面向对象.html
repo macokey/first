@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        //老版
+        function dog(name,sound){
+            this.name=name;
+            this.sound=sound;
+        };
+
+        dog.prototype.showName=function(){
+            alert(this.name);
+        };
+        dog.prototype.showSound=function(){
+            alert(this.sound);
+        };
+
+        var dogA=new dog('阿黄','汪汪汪');
+        dogA.showName();
+        dogA.showSound();
+
+
+
+
+         //新版 
+        class cat{
+            //构造器和类分开了
+            constructor(name,sound){
+                this.name=name;
+                this.sound=sound;
+            }
+            //方法不用再外挂出去了
+            showName(){
+                alert(this.name);
+            }
+            showSound(){
+                alert(this.sound);
+            }
+        }
+
+        var catA=new cat('狐狸','喵喵')
+        catA.showName();
+        catA.showSound();
+    </script>
+</body>
+</html>

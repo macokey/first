@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        //老版
+        function user(name,pass){
+            this.name=name;
+            this.pass=pass;
+        }
+
+        user.prototype.showName=function(){
+            alert(this.name);
+        }
+        user.prototype.showPass=function(){
+            alert(this.pass);
+        }
+
+
+        //继承  从一个普通对象上拿一个出来
+        function VipUser(name,pass,level){
+            //通过call来实现继承方法
+            //把之前对象的方法，user类的构造函数，继承父级的属性
+            user.call(this,name,pass);
+
+            this.level=level;
+        }
+
+        //继承的方法
+        VipUser.prototype=new user;
+        //constructor乱了少一个，补一个
+        VipUser.prototype.constructor=VipUser;
+
+        VipUser.prototype.showLevel=function(){
+            alert(this.level);
+        }
+
+        var v1=new VipUser('go','123', 3);
+
+        v1.showName();
+        v1.showPass();
+        v1.showLevel();
+
+        
+        //es6 新版   extends已经将父类继承完了
+        class Vipuser extends User{
+            constructor(name,pass,level){
+                  //超类就是父类
+                  //继承父级的属性
+                super(name,pass);//执行父类的构造函数，和call作用一样
+                this.level=level;
+            }
+            //加新的东西，扩展的东西就行
+            showLevel(){
+                alert(this.level);
+            }          
+        }
+
+        var v2=new VipUser("back",'456',1);
+        v2.showName();
+        v2.showPass();
+        v3.showLevel();
+    </script>
+</body>
+</html>

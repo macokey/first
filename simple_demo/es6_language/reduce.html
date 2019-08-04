@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+    //汇总  一堆出来一个
+
+        let arr=[111,123,21,21];
+        let result=arr.reduce(function(tmp,item,index){
+            console.log(tmp+','+item+','+index);
+            return item+tmp;
+        });
+        alert(result);
+
+        //求和
+        let resultArr=arr.reduce((tmp,item,index)=>item+tmp);
+        alert(resultArr);
+
+        //求平均数
+        let aveResult=arr.reduce((tmp,item,index)=>{
+            if(index!==arr.length-1){
+                return tmp+item;
+            }else{
+                return (tmp+item)/arr.length;
+            }
+        });
+        alert(aveResult);
+    </script>
+</body>
+</html>

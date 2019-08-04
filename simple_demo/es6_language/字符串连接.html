@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let a=12;
+        let str=`a${a}bc`;
+        alert(str);
+
+        let title='标题';
+        let content='内容';
+        let strOrgin='<div>\
+            <h1>'+title+'</h1>\
+            <p>'+content+'</p>\
+            </div>';
+        console.log(strOrgin);
+        
+        let str2=`<div>
+            <h1>${title}</h1>
+            <p>${content}</p>
+            </div>`;
+        console.log(str2);
+    </script>
+</body>
+</html>
